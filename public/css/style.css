@@ -598,7 +598,6 @@
   flex-grow: 1;
 }
 .footer .left .social {
-  border: 1px solid red;
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem;
