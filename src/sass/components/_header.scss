@@ -1,0 +1,257 @@
+.header {
+    background: $clr-neutral-100;
+    position: sticky;
+    top: 0;
+    user-select: none;
+    z-index: 3;
+    // 1st header navbar
+
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid $clr-neutral-300;
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            font-size: 1rem;
+            position: relative;
+
+            &-left {
+                padding-left: 11rem;
+
+                .logo {
+                    position: relative;
+                    cursor: pointer;
+                    margin-right: 1rem;
+
+                    .skip {
+                        position: absolute;
+                        left: 1rem;
+                        bottom: -30%;
+                        font-size: 0.8rem;
+                        color: $clr-neutral-700;
+                        visibility: hidden;
+                    }
+                }
+
+                .nav ul li a {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -80%;
+                        left: 0;
+                        width: 0%;
+                        height: 5px;
+
+                        background: $clr-zapier;
+                        transition: width .3s;
+                    }
+
+                    &:focus::before {
+                        width: 100%;
+                        transition-delay: .2s;
+                    }
+                }
+            }
+
+            .nav ul,
+            .other-links ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+                color: $clr-neutral-700;
+
+                li:not(.other-links ul li:last-child) {
+                    height: 100%;
+                    display: flex;
+                    border-radius: .5rem;
+
+                    a {
+                        padding: .3rem .7rem;
+                        border-radius: inherit;
+
+                        &:hover {
+                            color: $clr-zapier;
+
+                            path {
+                                fill: $clr-zapier;
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                            background: $clr-neutral-400;
+                            color: $clr-zapier;
+
+                            path {
+                                fill: $clr-zapier;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
+
+
+            &-right {
+                padding-right: 11rem;
+            }
+
+            .search {
+                &__box {
+                    width: 100vw;
+                    padding: 1rem;
+                    position: absolute;
+                    right: 0;
+                    bottom: -6.2rem;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    background: $clr-neutral-100;
+
+                    input {
+                        all: unset;
+                        border: 2px solid $clr-blue-jeans;
+                        padding: .8rem 3rem;
+                        width: 30rem;
+                        font-size: .9rem;
+                        border-radius: .3rem;
+
+                        &::placeholder {
+                            font-weight: 500;
+                        }
+                    }
+
+                    .icon {
+                        &--search {
+                            position: absolute;
+                            left: 31%;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                            path {
+                                fill: $clr-blue-jeans;
+                            }
+
+                        }
+
+                        &--cross path {
+                            fill: $clr-blue-jeans;
+                        }
+                    }
+
+                    &.box-active {
+                        display: flex;
+                    }
+                }
+
+                &__btn {
+                    margin-right: 1rem;
+                    position: relative;
+                    cursor: pointer;
+
+                    svg path {
+                        fill: $clr-neutral-600;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::before {
+                        content: 'Search apps...';
+                        width: max-content;
+                        position: absolute;
+                        bottom: -130%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: .4rem 1rem;
+                        border-radius: 1rem;
+                        background: $clr-earth;
+                        color: $clr-neutral-100;
+                        font-weight: 600;
+                        transition: all .5s ease-in;
+                        opacity: 0;
+                        // display: none;
+                        visibility: hidden;
+                        font-size: .9rem;
+
+                        &:hover {
+                            // display: none;
+                            visibility: hidden;
+                        }
+                    }
+
+                    &:hover::before {
+                        opacity: 1;
+                        visibility: visible;
+                        // display: block;
+                        user-select: none;
+
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    // 2nd header navbar
+
+    &__quick-links {
+        border-bottom: 1px solid $clr-neutral-300;
+        padding: 0 11rem;
+        color: $clr-neutral-700;
+
+        .links-box {
+            font-size: .8rem;
+            width: 100%;
+            display: inline-block;
+            overflow-y: auto;
+            white-space: nowrap;
+            padding: 1.2rem 1rem;
+
+            .list-item {
+                padding: .5rem 1rem;
+                margin: 0 .5rem;
+                border-radius: .5rem;
+                background: $clr-acid-wash;
+                background: $clr-neutral-200;
+            }
+
+            &::-webkit-scrollbar {
+                width: 20px;
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $clr-neutral-300;
+                border-radius: 10px;
+            }
+
+            &.active {
+                cursor: grabbing;
+            }
+        }
+    }
+    // 3rd header navbar
+    &__current-location {
+        font-size: .8rem;
+        padding: 1rem 4.5rem .5rem;
+        display: flex;
+        align-items: center;
+        svg path {
+            fill: $clr-blue-jeans;
+        }
+    }
+}

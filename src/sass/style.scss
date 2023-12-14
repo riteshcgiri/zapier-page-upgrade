@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Display:wght@100;200;300;400;500;600;700;800&family=Recursive:wght@300;400;500;600;700;800;900&display=swap');
+@import 
+'./variables/variables',
+'./components/header',
+'./components/main',
+'./components/footer';
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+    font-family: $typo-base;
+    font-weight: 400;
+    font-size: 14px;
+    width: 98.9vw;
+    background: $clr-neutral-100;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+.btn{
+    &--signup{
+        display: flex;
+        background: $clr-zapier;
+        color: $clr-neutral-100;
+        padding: .8rem 2rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        &:hover{
+            
+            // background: $clr-error-400;
+            // color: $clr-neutral-100;
+            transform: scale(.98);
+            box-shadow: 1rem 0 -1rem 2px rgba(0, 0, 0, .2);
+        }
+    }
+    &--login{
+        color: $clr-zapier;
+        font-weight: 600;
+    }
+    &--signup-blue{
+        background: $clr-blue-jeans;
+        color: $clr-neutral;
+        padding: .8rem 1.5rem;
+        border-radius: .4rem;
+        &:hover{
+            background: darken($clr-bluebell, 10%);
+        }
+    }
+    &--underline{
+        text-decoration: underline;
+        color: $clr-blue-jeans;
+        font-weight: 700;
+        &:hover{
+            color: $clr-bluebell;
+            
+        }
+    }
+}
+
+.list-item {
+    padding: .5rem 1rem;
+    margin: 0 .5rem;
+    border-radius: .5rem;
+    background: $clr-hydrangea;
+    color: $clr-blue-jeans;
+    font-weight: 700;
+}
+.mt-1{
+    margin-top: 1rem !important;
+}
